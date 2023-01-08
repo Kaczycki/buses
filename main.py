@@ -19,5 +19,5 @@ if __name__ == '__main__':
         # iterates list items which are dictionaries for specific buses
         for bus in i:
             # opens a map with bus pinned for each bus on the route
-            webbrowser.open(pintomap(16, str(bus['Lat']), str(bus['Lon'])))
+            webbrowser.open(pintomap(11, str(bus['Lat']), str(bus['Lon'])))
 
