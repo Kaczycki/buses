@@ -1,3 +1,8 @@
+from os import environ, getenv
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import json
 import webbrowser
 import requests
@@ -6,14 +11,18 @@ from netlib import *
 
 
 if __name__ == '__main__':
-
+    print (environ)
     linenr = ask_for_line()
+
     # print complete API request
     print(getapiurl(str(linenr)))
+
     # loads API response to "response" object
     response = requests.get(getapiurl(str(linenr)))
+
     # loads JSON {result:lista} to "lista" object
     lista = dict(response.json()).values()
+
     # iterate through "lista" (one item: list))
     for i in lista:
         # iterates list items which are dictionaries for specific buses
